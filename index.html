@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PPT Service | Payment for Positive Trade</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+  <!-- ════════════════ RISK DISCLAIMER BANNER ════════════════ -->
+  <div class="risk-banner" id="riskBanner">
+    <span class="risk-icon">⚠️</span>
+    <p><strong>Risk Warning:</strong> Trading involves risk. Consult your financial advisor before investing. Past Performance is not a guarantee of future results.</p>
+    <button class="risk-close" onclick="document.getElementById('riskBanner').style.display='none'">✕</button>
+  </div>
+
+  <!-- ════════════════ TICKER TAPE ════════════════ -->
+  <div class="ticker-wrap">
+    <div class="ticker-tape" id="tickerTape">
+      <span class="tick up">NIFTY 50 &nbsp;▲ 24,189.50 &nbsp;+1.23%</span>
+      <span class="sep">|</span>
+      <span class="tick down">BANKNIFTY &nbsp;▼ 51,432.20 &nbsp;-0.45%</span>
+      <span class="sep">|</span>
+      <span class="tick up">SENSEX &nbsp;▲ 79,843.00 &nbsp;+0.98%</span>
+      <span class="sep">|</span>
+      <span class="tick up">RELIANCE &nbsp;▲ 2,981.35 &nbsp;+1.10%</span>
+      <span class="sep">|</span>
+      <span class="tick down">TCS &nbsp;▼ 3,641.70 &nbsp;-0.32%</span>
+      <span class="sep">|</span>
+      <span class="tick up">HDFC BANK &nbsp;▲ 1,712.80 &nbsp;+0.75%</span>
+      <span class="sep">|</span>
+      <span class="tick up">INFY &nbsp;▲ 1,482.50 &nbsp;+2.05%</span>
+      <span class="sep">|</span>
+      <span class="tick down">ITC &nbsp;▼ 432.90 &nbsp;-0.18%</span>
+      <span class="sep">|</span>
+      <span class="tick up">WIPRO &nbsp;▲ 456.30 &nbsp;+1.45%</span>
+      <span class="sep">|</span>
+      <span class="tick down">AXISBANK &nbsp;▼ 1,067.55 &nbsp;-0.62%</span>
+      <span class="sep">|</span>
+      <span class="tick up">MARUTI &nbsp;▲ 12,340.00 &nbsp;+0.87%</span>
+      <span class="sep">|</span>
+      <span class="tick up">NIFTY 50 &nbsp;▲ 24,189.50 &nbsp;+1.23%</span>
+      <span class="sep">|</span>
+      <span class="tick down">BANKNIFTY &nbsp;▼ 51,432.20 &nbsp;-0.45%</span>
+    </div>
+  </div>
+
+  <!-- ════════════════ NAVBAR ════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <div class="nav-logo">
+        <div class="logo-icon">
+          <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+            <polygon points="18,2 34,30 2,30" fill="none" stroke="#c9a84c" stroke-width="2"/>
+            <polyline points="8,28 14,18 20,22 28,10" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-main">PPT Service</span>
+          <span class="logo-sub">Payment for Positive Trade</span>
+        </div>
+      </div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About Us</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#performance" class="nav-link">Performance</a></li>
+        <li><a href="#pricing" class="nav-link">Pricing</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="nav-cta-btn">Start Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ════════════════ HERO ════════════════ -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-container">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Algorithm Based Trading Service · Live
+      </div>
+      <h1 class="hero-title">
+        <span class="hero-line-1">Payment for</span>
+        <span class="hero-line-2 gold-gradient">Positive Trade</span>
+      </h1>
+      <p class="hero-sub">Powered by Advanced Algorithm Software — Trade in Nifty &amp; Options with a guaranteed structure of <strong>90 Confirm Trades</strong>.</p>
+      <div class="hero-stats">
+        <div class="hstat">
+          <span class="hstat-num" data-target="90">0</span>
+          <span class="hstat-label">Confirm Trades</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">3–4</span>
+          <span class="hstat-label">Month Duration</span>
+        </div>
+        <div class="hstat-divider"></div>
+        <div class="hstat">
+          <span class="hstat-num">100%</span>
+          <span class="hstat-label">Algorithm Based</span>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="#pricing" class="btn-primary">Join Service</a>
+        <a href="#about" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-chart-panel">
+      <div class="chart-card">
+        <div class="chart-card-header">
+          <span class="chart-title">NIFTY 50 · Algorithm Signal</span>
+          <span class="chart-live"><span class="live-dot"></span>LIVE</span>
+        </div>
+        <canvas id="heroChart" height="180"></canvas>
+        <div class="chart-footer">
+          <span class="cf-buy">▲ BUY Signal Active</span>
+          <span class="cf-price">24,189.50</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════ MARQUEE STRIP ════════════════ -->
+  <div class="marquee-strip">
+    <div class="marquee-inner">
+      <span>✦ Algorithm Based Entry</span>
+      <span>✦ 90 Confirm Trades</span>
+      <span>✦ Low Premium Expiry Strategy</span>
+      <span>✦ Fast &amp; Accurate Analysis</span>
+      <span>✦ Professional Trade Management</span>
+      <span>✦ 3–4 Month Program</span>
+      <span>✦ Algorithm Based Entry</span>
+      <span>✦ 90 Confirm Trades</span>
+      <span>✦ Low Premium Expiry Strategy</span>
+      <span>✦ Fast &amp; Accurate Analysis</span>
+    </div>
+  </div>
+
+  <!-- ════════════════ ABOUT ════════════════ -->
+  <section class="section about-section" id="about">
+    <div class="section-container two-col">
+      <div class="about-visual reveal">
+        <div class="about-card-main">
+          <div class="acm-icon">📊</div>
+          <div class="acm-title">PPT Service</div>
+          <div class="acm-desc">Algorithm Based Nifty Trading Service</div>
+          <div class="acm-pills">
+            <span>Low Premium</span>
+            <span>Expiry Trades</span>
+            <span>Confirm Entry</span>
+          </div>
+        </div>
+        <div class="about-card-mini ac1 reveal-delay-1">
+          <span class="acmini-icon">🤖</span>
+          <span>AI Algorithm</span>
+        </div>
+        <div class="about-card-mini ac2 reveal-delay-2">
+          <span class="acmini-icon">⚡</span>
+          <span>Fast Signals</span>
+        </div>
+        <div class="about-card-mini ac3 reveal-delay-3">
+          <span class="acmini-icon">🎯</span>
+          <span>90 Trades</span>
+        </div>
+      </div>
+      <div class="about-content reveal reveal-delay-2">
+        <div class="section-label">About Us</div>
+        <h2 class="section-title">Technology Based<br/><span class="gold-text">Trading Assistance</span></h2>
+        <p class="section-para">PPT Service aims to provide clients with organized and technology-based trading assistance. Our team uses Advanced Algorithm Software to perform Market Analysis.</p>
+        <p class="section-para">In this service, every trade is monitored and executed by Algorithm Software, giving clients a superior trading experience.</p>
+        <div class="about-highlights">
+          <div class="ah-item">
+            <div class="ah-check">✓</div>
+            <span>As per SEBI Registered Guidelines</span>
+          </div>
+          <div class="ah-item">
+            <div class="ah-check">✓</div>
+            <span>Transparent Trade Record</span>
+          </div>
+          <div class="ah-item">
+            <div class="ah-check">✓</div>
+            <span>Dedicated Support Team</span>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary mt-2">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ FEATURES ════════════════ -->
+  <section class="section features-section dark-bg" id="features">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Features</div>
+        <h2 class="section-title">Why is PPT Service <span class="gold-text">Special?</span></h2>
+        <p class="section-subtitle">Five key features of our service that give you a better trading experience</p>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="fc-icon-wrap">
+            <div class="fc-icon">🎯</div>
+          </div>
+          <h3>90 Confirm Trades</h3>
+          <p>Clients receive a total of <strong>90 Confirmed Trade Entries</strong> throughout the service period. Every trade is Verified by Algorithm Software.</p>
+          <div class="fc-tag">Core Feature</div>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="fc-icon-wrap">
+            <div class="fc-icon">📉</div>
+          </div>
+          <h3>Low Premium Expiry Trades</h3>
+          <p>Through a special strategy, <strong>Low Premium Expiry Trades</strong> are provided, keeping risk low and profit potential high.</p>
+          <div class="fc-tag">Special Strategy</div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="fc-icon-wrap">
+            <div class="fc-icon">🤖</div>
+          </div>
+          <h3>Algorithm Software Based Entry</h3>
+          <p>All trade entries are provided through <strong>Advanced Algorithm Software</strong> that automatically analyzes Market Patterns.</p>
+          <div class="fc-tag">AI Powered</div>
+        </div>
+        <div class="feature-card reveal reveal-delay-1">
+          <div class="fc-icon-wrap">
+            <div class="fc-icon">⚡</div>
+          </div>
+          <h3>Fast &amp; Accurate Analysis</h3>
+          <p>Market Movement is rapidly analyzed to deliver <strong>Real-Time Trade Signals</strong>. Delay-Free Execution System.</p>
+          <div class="fc-tag">Real-Time</div>
+        </div>
+        <div class="feature-card reveal reveal-delay-2">
+          <div class="fc-icon-wrap">
+            <div class="fc-icon">⏳</div>
+          </div>
+          <h3>Limited Duration Program</h3>
+          <p>This service is generally completed in <strong>3 to 4 months</strong>. Disciplined Trading Approach with a Structured Timeline.</p>
+          <div class="fc-tag">3-4 Months</div>
+        </div>
+        <div class="feature-card reveal reveal-delay-3 feature-card-gold">
+          <div class="fc-icon-wrap gold-icon">
+            <div class="fc-icon">🏆</div>
+          </div>
+          <h3>Professional Risk Management</h3>
+          <p><strong>Target and Exit Management</strong> is provided with every trade. Capital protection with a Disciplined Stop-Loss System.</p>
+          <div class="fc-tag">Risk Protected</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PROCESS ════════════════ -->
+  <section class="section process-section" id="process">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">How It Works</div>
+        <h2 class="section-title">How Does <span class="gold-text">PPT Service Work?</span></h2>
+      </div>
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        <div class="process-step reveal">
+          <div class="ps-number">01</div>
+          <div class="ps-content">
+            <h3>Client Registration &amp; Activation</h3>
+            <p>After joining the service, the Client's Registration and Service Activation is completed. All Terms &amp; Conditions are explained.</p>
+            <div class="ps-icon">📋</div>
+          </div>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="ps-number">02</div>
+          <div class="ps-content">
+            <h3>Algorithm Software Market Analysis</h3>
+            <p>In-depth analysis of Market Data is performed by Advanced Algorithm Software. NIFTY, BANKNIFTY and Options Data is Processed.</p>
+            <div class="ps-icon">🤖</div>
+          </div>
+        </div>
+        <div class="process-step reveal reveal-delay-2">
+          <div class="ps-number">03</div>
+          <div class="ps-content">
+            <h3>Low Premium Expiry Trade Selection</h3>
+            <p>The Algorithm selects the Best Low Premium Expiry Trades with lower risk and higher profit potential.</p>
+            <div class="ps-icon">📊</div>
+          </div>
+        </div>
+        <div class="process-step reveal reveal-delay-3">
+          <div class="ps-number">04</div>
+          <div class="ps-content">
+            <h3>Confirm Trade Entry Delivery</h3>
+            <p>The Client is given a Confirm Trade Entry — complete information including Entry Price, Target Price, and Stop Loss is provided.</p>
+            <div class="ps-icon">📲</div>
+          </div>
+        </div>
+        <div class="process-step reveal reveal-delay-1">
+          <div class="ps-number">05</div>
+          <div class="ps-content">
+            <h3>Target &amp; Exit Management</h3>
+            <p>After Trade Entry, Target and Exit Management is monitored by our Team. Timely Exit Alerts are sent.</p>
+            <div class="ps-icon">✅</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PERFORMANCE CHART ════════════════ -->
+  <section class="section performance-section dark-bg" id="performance">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Performance Overview</div>
+        <h2 class="section-title">Trade <span class="gold-text">Performance Structure</span></h2>
+        <p class="section-subtitle">This chart shows the Structured Trade Distribution of the Service. Past performance does not guarantee future results.</p>
+      </div>
+      <div class="perf-grid">
+        <div class="perf-chart-wrap reveal">
+          <canvas id="performanceChart" height="300"></canvas>
+        </div>
+        <div class="perf-stats reveal reveal-delay-2">
+          <div class="ps-stat">
+            <div class="pss-label">Total Trades</div>
+            <div class="pss-value" data-target="90">0</div>
+            <div class="pss-bar"><div class="pss-fill" style="--width: 100%"></div></div>
+          </div>
+          <div class="ps-stat">
+            <div class="pss-label">Service Duration</div>
+            <div class="pss-value">3–4 Months</div>
+          </div>
+          <div class="ps-stat">
+            <div class="pss-label">Trade Type</div>
+            <div class="pss-value-sm">Low Premium Options</div>
+          </div>
+          <div class="ps-stat">
+            <div class="pss-label">Entry Method</div>
+            <div class="pss-value-sm">Algorithm Software</div>
+          </div>
+          <div class="ps-stat">
+            <div class="pss-label">Strategy</div>
+            <div class="pss-value-sm">Expiry Based Options</div>
+          </div>
+          <div class="perf-disclaimer">
+            ⚠️ <em>Simulated/Indicative Data — Real results may vary. Trading involves significant risk.</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ PRICING ════════════════ -->
+  <section class="section pricing-section" id="pricing">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Service Pricing</div>
+        <h2 class="section-title">PPT Service <span class="gold-text">Cost Structure</span></h2>
+      </div>
+      <div class="pricing-wrap">
+        <div class="pricing-card reveal">
+          <div class="pc-badge">Premium Plan</div>
+          <div class="pc-logo">PPT</div>
+          <div class="pc-name">Payment for Positive Trade</div>
+          <div class="pc-price">
+            <span class="pc-currency">₹</span>
+            <span class="pc-amount">8,50,000</span>
+            <span class="pc-period">/ Service Period</span>
+          </div>
+          <div class="pc-divider"></div>
+          <ul class="pc-features">
+            <li><span class="pcf-icon">✅</span> 90 Confirm Trade Entries</li>
+            <li><span class="pcf-icon">✅</span> Algorithm Software Based Analysis</li>
+            <li><span class="pcf-icon">✅</span> Low Premium Expiry Special Strategy</li>
+            <li><span class="pcf-icon">✅</span> Target &amp; Stop Loss Management</li>
+            <li><span class="pcf-icon">✅</span> Fast &amp; Accurate Market Signals</li>
+            <li><span class="pcf-icon">✅</span> 3–4 Month Structured Program</li>
+            <li><span class="pcf-icon">✅</span> Dedicated Support Team</li>
+            <li><span class="pcf-icon">✅</span> WhatsApp Trade Alerts</li>
+          </ul>
+          <a href="#contact" class="btn-primary full-width">Join Service</a>
+          <p class="pc-note">Please read Terms &amp; Conditions carefully before starting the service.</p>
+        </div>
+        <div class="pricing-info reveal reveal-delay-2">
+          <div class="pi-card">
+            <h3>⏳ Service Duration</h3>
+            <p>Total Duration: <strong>3 to 4 Months</strong></p>
+            <p>During this period, clients receive a total of <strong>90 Confirm Trades</strong>.</p>
+          </div>
+          <div class="pi-card">
+            <h3>📋 Terms &amp; Conditions</h3>
+            <ul class="tc-list">
+              <li>Service Fee is Non-Refundable.</li>
+              <li>Trading involves risk — Capital Loss is possible.</li>
+              <li>This is not an Investment Advisory.</li>
+              <li>Consult a SEBI Registered Advisor.</li>
+              <li>Past Performance does not guarantee Future Returns.</li>
+              <li>Service duration depends on Market Conditions.</li>
+            </ul>
+          </div>
+          <div class="pi-card risk-card">
+            <h3>⚠️ Risk Disclosure</h3>
+            <p>Options Trading involves <strong>High Risk</strong>. You can lose your entire Investment. Only invest capital that you can afford to lose.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ WHY CHOOSE ════════════════ -->
+  <section class="section why-section dark-bg">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Why Choose Us?</div>
+        <h2 class="section-title">Benefits of <span class="gold-text">PPT Service</span></h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal">
+          <div class="wi-num">01</div>
+          <h4>Advanced Algorithm Technology</h4>
+          <p>State-of-the-art Algorithm Technology is used to analyze the Market</p>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="wi-num">02</div>
+          <h4>Professional Trade Analysis</h4>
+          <p>Verification of Algorithm Signals by Professional Analysts</p>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="wi-num">03</div>
+          <h4>System Based Entry</h4>
+          <p>Free from Emotional Trading — Fully System Based Trade Entry</p>
+        </div>
+        <div class="why-item reveal reveal-delay-3">
+          <div class="wi-num">04</div>
+          <h4>Low Premium Special Strategy</h4>
+          <p>Trading with lower risk through Low Premium Options Strategy</p>
+        </div>
+        <div class="why-item reveal reveal-delay-1">
+          <div class="wi-num">05</div>
+          <h4>Time Efficient Support</h4>
+          <p>Save your time — you don't need to monitor the Market yourself</p>
+        </div>
+        <div class="why-item reveal reveal-delay-2">
+          <div class="wi-num">06</div>
+          <h4>90 Trade Structure</h4>
+          <p>Disciplined Trading Approach with a Structured 90-Trade Program</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ CONTACT ════════════════ -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div class="section-header reveal">
+        <div class="section-label">Contact Us</div>
+        <h2 class="section-title">Talk to <span class="gold-text">Us</span></h2>
+        <p class="section-subtitle">Contact us for more information about the Service</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="ci-card">
+            <div class="ci-icon">📞</div>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <p>+91-XXXXXXXXXX</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">📧</div>
+            <div>
+              <h4>Email</h4>
+              <p>support@yourwebsite.com</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">🌐</div>
+            <div>
+              <h4>Website</h4>
+              <p>www.yourwebsite.com</p>
+            </div>
+          </div>
+          <div class="ci-card">
+            <div class="ci-icon">🕐</div>
+            <div>
+              <h4>Support Hours</h4>
+              <p>Mon–Sat: 9:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+          <div class="social-row">
+            <a href="#" class="social-btn">WhatsApp</a>
+            <a href="#" class="social-btn">Telegram</a>
+            <a href="#" class="social-btn">YouTube</a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal reveal-delay-2">
+          <form class="contact-form" id="contactForm" onsubmit="handleForm(event)">
+            <h3>Enquiry Form</h3>
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" placeholder="Your Full Name" required />
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Mobile Number *</label>
+                <input type="tel" placeholder="+91 8655824658" required />
+              </div>
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="your@email.com" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>City / State</label>
+              <input type="text" placeholder="Your City" />
+            </div>
+            <div class="form-group">
+              <label>Trading Experience</label>
+              <select>
+                <option value="">Select Experience</option>
+                <option>Beginner (0–1 Year)</option>
+                <option>Intermediate (1–3 Years)</option>
+                <option>Experienced (3+ Years)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Message / Query</label>
+              <textarea placeholder="Your query about PPT Service..." rows="4"></textarea>
+            </div>
+            <div class="form-check">
+              <input type="checkbox" id="riskAccept" required />
+              <label for="riskAccept">I understand that Trading involves Risk and this is not an Investment Advisory.</label>
+            </div>
+            <button type="submit" class="btn-primary full-width">Submit Enquiry</button>
+            <div class="form-success" id="formSuccess">
+              ✅ Your Query has been submitted successfully. We will contact you shortly.
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════ RISK DISCLOSURE FULL ════════════════ -->
+  <section class="risk-full-section">
+    <div class="section-container">
+      <h3>⚠️ Risk Disclosure</h3>
+      <p>PPT Service is an Algorithm Based Trading Signal Service. It is not a SEBI Registered Investment Advisor (RIA) and is not an Investment Advisory Service of any kind. Stock Market Trading is highly risky and you can lose your entire Capital. Options Trading carries especially High Risk. Past Performance does not guarantee Future Results. Please consult a SEBI Registered Financial Advisor before joining the service. Only invest an amount that you can afford to lose.</p>
+      <p><strong>Disclaimer:</strong> This Website is for Informational Purposes only. Please consult your Financial Advisor before making any Trading Decision. PPT Service does not guarantee any Profit or Return.</p>
+    </div>
+  </section>
+
+  <!-- ════════════════ FOOTER ════════════════ -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-logo-col">
+        <div class="nav-logo">
+          <div class="logo-icon">
+            <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
+              <polygon points="18,2 34,30 2,30" fill="none" stroke="#c9a84c" stroke-width="2"/>
+              <polyline points="8,28 14,18 20,22 28,10" stroke="#c9a84c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="logo-text">
+            <span class="logo-main">PPT Service</span>
+            <span class="logo-sub">Payment for Positive Trade</span>
+          </div>
+        </div>
+        <p class="footer-tagline">Algorithm Based Trading Service — with 90 Confirm Trades.</p>
+      </div>
+      <div class="footer-links-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#process">Process</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-links-col">
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Risk Disclosure</a></li>
+          <li><a href="#">Refund Policy</a></li>
+          <li><a href="#">Disclaimer</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact-col">
+        <h5>Contact</h5>
+        <p>📞 +91-XXXXXXXXXX</p>
+        <p>📧 support@yourwebsite.com</p>
+        <p>🌐 www.yourwebsite.com</p>
+        <p>Mon–Sat: 9AM – 6PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 PPT Service. All Rights Reserved. | Trading involves risk.</p>
+      <p class="footer-sebi">⚠️ Not SEBI Registered Investment Advisor. For Educational/Signal Purposes Only.</p>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
